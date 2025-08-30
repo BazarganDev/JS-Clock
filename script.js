@@ -1,7 +1,7 @@
 // Store active timer
 var activeTimer = null;
 
-function normal_mode_clock() {
+function normalModeClock() {
     // Get current date
     var date = new Date();
     var hour = date.getHours();
@@ -21,7 +21,7 @@ function normal_mode_clock() {
     document.getElementById("clock-display").textContent = time_format;
 }
 
-function am_pm_mode_clock() {
+function AmPmModeClock() {
     // Get current date
     var date = new Date();
     var hour = date.getHours();
@@ -46,7 +46,7 @@ function am_pm_mode_clock() {
     document.getElementById("clock-display").textContent = time_format;
 }
 
-function show_date() {
+function showDate() {
     // Show current date
     var months = {
         1: "January",
@@ -78,9 +78,9 @@ function startNormalMode() {
         clearInterval(activeTimer);
     }
     // Start new mode
-    activeTimer = setInterval(normal_mode_clock, 1000);
-    normal_mode_clock(); // Immediate display
-    show_date();
+    activeTimer = setInterval(normalModeClock, 1000);
+    normalModeClock(); // Immediate display
+    showDate();
     console.log("Switched to Normal Mode");
 }
 
@@ -90,8 +90,8 @@ function startAmPmMode() {
         clearInterval(activeTimer);
     }
     // Start new mode
-    activeTimer = setInterval(am_pm_mode_clock, 1000);
-    am_pm_mode_clock(); // Immediate display
-    show_date();
+    activeTimer = setInterval(AmPmModeClock, 1000);
+    AmPmModeClock(); // Immediate display
+    showDate();
     console.log("Switched to AM/PM Mode");
 }
